@@ -37,49 +37,16 @@
         <div class="product-grid">
             <!-- Aquí irán los productos en forma de cuadrícula -->
             <!-- Ejemplo de un producto -->
-            <div class="product">
-                <img src="./product-image.jpg" alt="Producto">
-                <h3>Nombre del Producto</h3>
-                <p>Descripción del producto.</p>
-                <p>Precio: $XX.XX</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product">
-                <img src="./product-image.jpg" alt="Producto">
-                <h3>Nombre del Producto</h3>
-                <p>Descripción del producto.</p>
-                <p>Precio: $XX.XX</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product">
-                <img src="./product-image.jpg" alt="Producto">
-                <h3>Nombre del Producto</h3>
-                <p>Descripción del producto.</p>
-                <p>Precio: $XX.XX</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product">
-                <img src="./product-image.jpg" alt="Producto">
-                <h3>Nombre del Producto</h3>
-                <p>Descripción del producto.</p>
-                <p>Precio: $XX.XX</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product">
-                <img src="./product-image.jpg" alt="Producto">
-                <h3>Nombre del Producto</h3>
-                <p>Descripción del producto.</p>
-                <p>Precio: $XX.XX</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product">
-                <img src="./product-image.jpg" alt="Producto">
-                <h3>Nombre del Producto</h3>
-                <p>Descripción del producto.</p>
-                <p>Precio: $XX.XX</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <!-- Repetir este bloque para cada producto -->
+            <% for (var i=0; i < products.length; i++) { %>
+                <div class="product">
+                    <img src="<%= products[i].image %> " alt="Producto">
+                    <h3><%= products[i].name %></h3>
+                    <p><%= products[i].description %></p>
+                    <p>Precio: <%= products[i].price %></p>
+                    <button>Agregar al Carrito</button>
+                </div>
+            <% } %>
+            
         </div>
 
         <div class="pagination">
@@ -110,5 +77,6 @@
             window.location.href = 'http://localhost:3000/login'
         }
     </script>
+    <script src="./scripts/home.js"></script>
 </body>
 </html>

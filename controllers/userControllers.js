@@ -1,6 +1,6 @@
 const User = require('../models/userModels')
 const userUtils = require('../utils/userUtils')
-// const Cart = require('../models/CartModels')
+const Cart = require('../models/cartModel')
 const login= async (req,res)=>{
    try{
     const email = req.body.email
@@ -37,8 +37,7 @@ const register= async(req,res)=>{
                 salt: hashSalt.salt,
                 photo: photo,
                 isAdmin: false,
-            }
-            )
+            })
             await Cart.create({
                 userId:user._id,
             })

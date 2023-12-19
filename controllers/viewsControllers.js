@@ -1,4 +1,4 @@
-// const Product = require('../models/productsModels')
+const Product = require('../models/productsModels')
 // const Cart = require('../models/CartModels')
 
 
@@ -11,10 +11,10 @@ const register=(req,res)=>{
 }
 
 const home = async (req,res)=>{
-    // const products = await Product.find({})
+    const products = await Product.find({})
     // const shoppingCart = await Cart.findOne({userId:req.user._id})
     if(req.user){
-        res.render('pages/home', {user:req.user})}
+        res.render('pages/home', {user:req.user, products:products})}
     else{
         res.redirect('http://localhost:3000/login')
     }

@@ -10,7 +10,11 @@
     <header>
         <nav class="navbar">
             <div class="logo">
+              <a href="/">
                 <span>Ecommerce</span>
+
+              </a>
+                
             </div>
             <div class="user">
                 <img src="./photo_profile.webp" alt="Usuario" class="user-image" onclick="toggleMenu()">
@@ -32,25 +36,8 @@
     <!-- Sección de Productos -->
     <section class="products">
       <h2>Productos</h2>
-      <ul>
-        <li>
-            <img src="./product-image.jpg" alt="">
-          Producto 1 - Precio: $20
-          <button class="edit-btn" onclick="openEditModal()">Editar</button>
-          <button class="delete-btn" onclick="openDeleteModal()">Borrar</button>
-        </li>
-        <li>
-            <img src="./product-image.jpg" alt="">
-          Producto 2 - Precio: $30
-          <button class="edit-btn" onclick="openEditModal()">Editar</button>
-          <button class="delete-btn" onclick="openDeleteModal()">Borrar</button>
-        </li>
-        <li>
-            <img src="./product-image.jpg" alt="">
-          Producto 3 - Precio: $25
-          <button class="edit-btn" onclick="openEditModal()">Editar</button>
-          <button class="delete-btn" onclick="openDeleteModal()">Borrar</button>
-        </li>
+      <ul id="list-products">
+      
       </ul>
       <button class="create-btn" onclick="openCreateModal()">Crear Nuevo Producto</button>
       <!-- Aquí van funciones para crear, editar y borrar productos -->
@@ -99,7 +86,7 @@
         <label for="productImage">Imagen:</label>
         <input type="text" id="productImage" name="productImage" required>
         
-        <button type="submit">Crear Producto</button>
+        <button type="submit" onclick="createProduct()">Crear Producto</button>
       </form>
     </div>
     </div>
@@ -122,7 +109,7 @@
             <label for="editProductImage">Imagen:</label>
             <input type="text" id="editProductImage" name="editProductImage" required>
     
-            <button type="submit">Guardar Cambios</button>
+            <button type="submit" onclick="updateProduct()">Guardar Cambios</button>
         </form>
         </div>
     </div>
@@ -167,9 +154,7 @@
             document.getElementById('createModal').style.display = 'none';
             }
 
-            function openEditModal() {
-            document.getElementById('editProductModal').style.display = 'block';
-            }
+            
 
             function closeEditModal() {
             document.getElementById('editProductModal').style.display = 'none';
@@ -185,27 +170,12 @@
             document.getElementById('editOrderModal').style.display = 'none';
             }
 
-            function openDeleteModal() {
-            document.getElementById('deleteModal').style.display = 'block';
-            }
-
-            // Función para cerrar el modal de eliminación
-            function closeDeleteModal() {
-            document.getElementById('deleteModal').style.display = 'none';
-            }
-
-            // Función para confirmar la eliminación
-            function confirmDelete() {
-            // Aquí puedes agregar la lógica para eliminar el producto o la orden
-            // Una vez confirmada la eliminación, puedes redirigir o realizar otras acciones necesarias.
-            console.log('Eliminado'); // Este es solo un ejemplo, ajusta según tu lógica.
-            closeDeleteModal();
-            }
 
             function toggleMenu() {
             var userMenu = document.getElementById("userMenu");
             userMenu.style.display = (userMenu.style.display === "flex") ? "none" : "flex";
         }
   </script>
+  <script src="./scripts/dashboard.js"></script>
 </body>
 </html>
