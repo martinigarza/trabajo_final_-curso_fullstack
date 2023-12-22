@@ -23,7 +23,7 @@
                     <span id="admin-label">Admin</span>
                     <a href="./dashboard">Dashboard</a>
                     <% } %>
-                    <a href="#">Carrito de Compras</a>
+                    <a href="/cart">Carrito de Compras</a>
                     <a href="#">Mis compras</a>
                     <a href="#">Editar Perfil</a>
                     <a onclick="logout()">Salir</a>
@@ -35,15 +35,14 @@
     <main>
         <h2 id="subtitle">Nuestros productos</h2>
         <div class="product-grid">
-            <!-- Aquí irán los productos en forma de cuadrícula -->
-            <!-- Ejemplo de un producto -->
             <% for (var i=0; i < products.length; i++) { %>
+                <% const existInCart = cart.some(id => products[i]._id.toString() === id.toString())%>
                 <div class="product">
                     <img src="<%= products[i].image %> " alt="Producto">
                     <h3><%= products[i].name %></h3>
                     <p><%= products[i].description %></p>
                     <p>Precio: <%= products[i].price %></p>
-                    <button>Agregar al Carrito</button>
+                    <button class="<%= existInCart ? "delete-to-cart" : "" %>" onclick="addProductToCart('<%= products[i]._id %>')"><%= existInCart ? "Sacar del carrito" : "Agregar al Carrito" %></button>
                 </div>
             <% } %>
             

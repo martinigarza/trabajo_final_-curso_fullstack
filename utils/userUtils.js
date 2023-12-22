@@ -31,5 +31,5 @@ module.exports = {
     createHashAndSalt:createHashAndSalt,
     comparePasswords:comparePasswords,
     createToken:createToken,
-    validateToken:validateToken
+    validateToken:validateToken,
 }

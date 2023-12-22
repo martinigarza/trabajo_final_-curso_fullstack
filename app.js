@@ -4,7 +4,7 @@ const viewsRoutes = require('./routers/viewsRoutes')
 const userRoutes = require('./routers/userRoutes')
 const mongoose = require('mongoose')
 const productsRoutes = require('./routers/productsRoutes')
-// const cartRoutes = require('./routers/cartRoutes')
+const cartRoutes = require('./routers/cartRoutes')
 
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
@@ -24,7 +24,7 @@ app.use('/',viewsRoutes)
 
 //rutas de recursos
 app.use('/api/user/',userRoutes)
-// app.use('/api/cart/', cartRoutes)
+app.use('/api/cart/', cartRoutes)
 app.use('/api/product/',productsRoutes)
 
 app.listen(port, async () => {

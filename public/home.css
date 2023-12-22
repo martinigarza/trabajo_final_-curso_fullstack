@@ -142,3 +142,7 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.delete-to-cart {
+    background-color: red;
+}
